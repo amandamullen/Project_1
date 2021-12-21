@@ -67,8 +67,8 @@ A summary of the access policies in place can be found in the table below.
 *** Elk Configuration
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is an advantage because...
 
--It's a free open-source tool.
 - Easy to use and set up: No special coding skills are necessary to use Ansible’s playbooks.
+- It's a free open-source tool.
 - Powerful: Ansible lets you model even highly complex IT workflows. 
 - Flexible: You can orchestrate and customize an entire application environment no matter where it’s deployed.
 - Agentless: You will not need to install any other software, firewall ports or seperate management structures on the client systems you want to automate.
