@@ -2,11 +2,11 @@
 
 <div id="top"></div>
 <!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
+*** These files have been tested and used to generate a live Elk Stack deployment on Azure. The files can be used to recreate the entire Elk Stack or just portions of the pla 
+*** playbook file can be used to install files such as filebeat.
+*** 
+*** 
+*** 
 -->
 
 
