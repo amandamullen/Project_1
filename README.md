@@ -18,13 +18,89 @@ This document contains the following information:
  - Machines Being Monitored
  - How to Use the Ansible Build
  
-Description of the Topology
+***Description of the Topology
  
  -There are two types of network topologies: physical and logical. Physical topology emphasizes the physical layout of the connected devices and nodes, while the logical topology focuses on the pattern of data transfer between network nodes.
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn vulnerable Web Application.
 Regardless of whether it’s hardware or software, or what algorithm(s) it uses, a load balancer disburses traffic to different web servers in the
 resource pool to ensure that no single server becomes overworked and subsequently unreliable. Load balancers effectively minimize server response 
 time and maximize throughput.
+
+What is the advantage of a jump box?
+- A jump box is a secure computer that all admins first connect to before launching any administrative task or use as an origination point to connect to other servers or untrusted environments.
+
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the **filesystem** and system **resources / availability**.
+- What does Filebeat watch for? **log files and filesystem changes**
+
+The configuration details of each machine may be found below.
+-note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
+
+
+| Name     | Function | IP Address | Operating System |
+|----------|----------|------------|------------------|
+| Jump Box | Gateway  | 10.0.0.7   |20.124.228.102 Linux 
+| Web-1    | DVWA     | 10.0.0.4   |Linux            |
+| Web-2    | DVWA     | 10.0.0.8   |Linux            |
+| ELK-VM   | ELK Server | 10.1.0.4 |20.110.0.90 Linux
+
+***Access Policies
+
+The machines on the internal network are not exposed to the public Internet. 
+
+
+Only the **JumpBox** machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- **My home network public IP address (20.124.228.102)*
+Machines within the network can only be accessed by SSH.
+
+- Which machine did you allow to access your ELK VM? What was its IP address? JumpBox VM, its private Ip address(Vnet IP)-10.0.0.7
+
+A summary of the access policies in place can be found in the table below.
+
+| Name     | Publicly Accessible | Allowed IP Addresses |
+|----------|---------------------|----------------------|
+| Jump Box | Yes (SSH)           | SSH:My home network  |
+| Web-1    | Yes (HTTP)          | HTTP:any, SSH:10.0.0.7   |
+| Web-2    | Yes (HTTP)          | HTTP:any, SSH:10.0.0.7   |
+| Web-3    | Yes (HTTP)          | HTTP:any, SSH:10.0.0.7   |
+| ELK-VM   | Yes (HTTP, SSH)     | HTTP:any, SSH:10.0.0.7   |
+
+*** Elk Configuration
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is an advantage because...
+-It's a free open-source tool.
+- Easy to use and set up: No special coding skills are necessary to use Ansible’s playbooks.
+- Powerful: Ansible lets you model even highly complex IT workflows. 
+- Flexible: You can orchestrate and customize an entire application environment no matter where it’s deployed.
+- Agentless: You will not need to install any other software, firewall ports or seperate management structures on the client systems you want to automate.
+- Efficient: Because there is no extra software installed, there is more room for application resources on your server.
+
+The playbook implements the following tasks:
+- Install docker.io
+- Install pip3
+- Install Docker python module
+- Downloads abd configures Elk Docker container
+- Increase virtual memory
+- Download and launch a docker
+- Activates ports 5601, 9200, and 5044.
+
+![screenshot of docker ps output](docker_ps_output.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
