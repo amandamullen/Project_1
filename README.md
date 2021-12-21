@@ -20,7 +20,7 @@ This document contains the following information:
  
 ***Description of the Topology
  
- -There are two types of network topologies: physical and logical. Physical topology emphasizes the physical layout of the connected devices and nodes, while the logical topology focuses on the pattern of data transfer between network nodes.
+ There are two types of network topologies: physical and logical. Physical topology emphasizes the physical layout of the connected devices and nodes, while the logical topology focuses on the pattern of data transfer between network nodes.
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn vulnerable Web Application.
 Regardless of whether it’s hardware or software, or what algorithm(s) it uses, a load balancer disburses traffic to different web servers in the
 resource pool to ensure that no single server becomes overworked and subsequently unreliable. Load balancers effectively minimize server response 
@@ -49,10 +49,10 @@ The machines on the internal network are not exposed to the public Internet.
 
 
 Only the **JumpBox** machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- **My home network public IP address (20.124.228.102)*
+ **My home network public IP address (20.124.228.102)*
 Machines within the network can only be accessed by SSH.
 
-- Which machine did you allow to access your ELK VM? What was its IP address? JumpBox VM, its private Ip address(Vnet IP)-10.0.0.7
+- Which machine did you allow to access your ELK VM? What was its IP address? JumpBox VM, its private Ip address(Vnet IP)10.0.0.7
 
 A summary of the access policies in place can be found in the table below.
 
@@ -83,14 +83,61 @@ The playbook implements the following tasks:
 - Download and launch a docker
 - Activates ports 5601, 9200, and 5044.
 
-![screenshot of docker ps output](docker_ps_output.png)
 
 
 
+*** Target Machines & Beats
+This ELK server is configured to monitor the following machines:
+-Private IPs of Web-1 and Web-2
 
+| Name      | IP Addresses         |
+|---------- |----------------------|
+| Web-1     | 10.0.0.4             |
+| Web-2     | 10.0.0.8             |
 
+We have installed the following Beats on these machines:
+ Filebeat
 
+These Beats allow us to collect the following information from each machine:
+- **Filebeat reads and forwards log files, and monitors file system changes.**
 
+### Using the Playbook
+In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
+SSH into the control node and follow the steps below:
+
+Copy the playbook file to Ansible Control Node.
+Playbook for Filebeat: [filebeat](Playbooks/filebeat-playbook.yml)
+ 
+```
+$ cd /etc/ansible
+$ mkdir files
+# Clone Repository + IaC Files
+$ git clone https://github.com/name/Project-1-ELK-Stack-Project.git
+# Move Playbooks and hosts file Into `/etc/ansible`
+$ cp /Project-1-ELK-Stack-Project/ReadMe/Playbooks/*
+```
+- Update the hosts file to include webserver and elk
+- Edit hosts file to update and to make Ansible run the playbook on a specific machine, and specify which machine to install the ELK server on versus which to install Filebeat.
+- Copy of the hosts file is also here: hosts
+```
+$ cd /etc/ansible
+$ cat > hosts <<EOF
+[webservers]
+10.0.0.4
+10.0.0.8
+
+[elk]
+10.1.0.4
+EOF
+```
+- Run the playbook, and navigate to Kibana (http://[Host IP]/app/kibana#/home) to check that the installation worked as expected.
+```
+cd /etc/ansible
+ $ ansible-playbook install_elk.yml elk
+ $ ansible-playbook install_filebeat.yml webservers
+ 
+ ```
+ - Check that the ELK server is running: http://[Host IP]/app/kibana#/home 
 
 
 
