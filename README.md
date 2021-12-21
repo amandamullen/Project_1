@@ -19,7 +19,12 @@ This document contains the following information:
  - How to Use the Ansible Build
  
 Description of the Topology
---> The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn vulnerable Web Application.
+ There are two types of network topologies: physical and logical. Physical topology emphasizes the physical layout of the connected devices and nodes, while the logical topology focuses on the pattern of data transfer between network nodes.
+The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn vulnerable Web Application.
+Regardless of whether it’s hardware or software, or what algorithm(s) it uses, a load balancer disburses traffic to different web servers in the
+resource pool to ensure that no single server becomes overworked and subsequently unreliable. Load balancers effectively minimize server response 
+time and maximize throughput.
+
 
 
 
