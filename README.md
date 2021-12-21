@@ -95,10 +95,11 @@ This ELK server is configured to monitor the following machines:
 | Web-1     | 10.0.0.4             |
 | Web-2     | 10.0.0.8             |
 
-We have installed the following Beats on these machines:
- Filebeat
+We have installed the following Beat on these machines:
 
-These Beats allow us to collect the following information from each machine:
+Filebeat
+
+The Beat allows us to collect the following information from each machine:
 - **Filebeat reads and forwards log files, and monitors file system changes.**
 
 ### Using the Playbook
