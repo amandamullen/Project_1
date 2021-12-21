@@ -3,22 +3,27 @@
 
  The files in this repository were used to configure the network depicted below.   
     
-  ![Network Diagram](Project_1_diagram.png)  
+  !  
     
     These files have been tested and used to generate a live Elk Stack deployment on Azure. The files can be used to recreate the
     entire Elk Stack or just portions of the playbook file can be used to install files such as filebeat.
 
     (Ansible/install_elk_yml)
 
+This document contains the following information:
+ - Description of the Topology 
+ - Access Policies
+ - ELK Configuration
+ - Beats in Use
+ - Machines Being Monitored
+ - How to Use the Ansible Build
+ 
+Description of the Topology
+--> The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn vulnerable Web Application.
 
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
+
+
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
