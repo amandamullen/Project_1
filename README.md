@@ -1,14 +1,13 @@
 # Elk Stack
 # Automated Elk Stack Deployment
 
- The files in this repository were used to configure the network depicted below.   
-     
-![Alt text](amandamullen/Project_1/Project_1/Diagrams/Elk Stack Diagram.PNG?raw=true "Elk")
-    
-    These files have been tested and used to generate a live Elk Stack deployment on Azure. The files can be used to recreate the
-    entire Elk Stack or just portions of the playbook file can be used to install files such as filebeat.
+The files in this repository were used to configure the network depicted below.   
+![Elk Stack Diagram](https://user-images.githubusercontent.com/90070333/147014412-5aa4364c-5285-4771-b74b-9d5eee5c83e5.png)
 
-    (Ansible/install_elk_yml)
+
+These files have been tested and used to generate a live Elk Stack deployment on Azure. The files can be used to recreate the entire Elk Stack or just portions of the playbook file can be used to install files such as filebeat.
+
+ (Ansible/install_elk_yml)
 
 This document contains the following information:
  - Description of the Topology 
