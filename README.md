@@ -3,7 +3,7 @@
 
  The files in this repository were used to configure the network depicted below.   
      
-![plot](./Project_1/Project_1/Diagrams/Elk Stack Diagram.PNG)
+![Alt text](amandamullen/Project_1/Project_1/Diagrams/Elk Stack Diagram.PNG?raw=true "Elk")
     
     These files have been tested and used to generate a live Elk Stack deployment on Azure. The files can be used to recreate the
     entire Elk Stack or just portions of the playbook file can be used to install files such as filebeat.
